@@ -1,7 +1,28 @@
-class Card {}
+class Card {
+  constructor(text) {
+    this.text = text;
+  }
+}
 
-var card = new Card();
-console.log(card);
+class List {
+  constructor(title) {
+    this.title = title;
+    this.cards = [];
+  }
 
-console.log(card.constructor);
-console.log(card.constructor.name);
+  addCard(text) {
+    var card = new Card(text);
+    this.cards.push(card);
+  }
+}
+
+class Board {
+  constructor() {
+    this.lists = [];
+  }
+
+  addList(text) {
+    var list = new List(text);
+    this.lists.push(list);
+  }
+}
